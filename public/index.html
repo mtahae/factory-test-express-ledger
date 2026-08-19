@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ledger API</title>
+    <style>
+      body {
+        margin: 0;
+        background: #fbfbfc;
+        color: #1a1d23;
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 48px 20px 80px;
+      }
+      h1 {
+        margin: 0 0 4px;
+        font-size: 26px;
+        letter-spacing: -0.02em;
+      }
+      .lede {
+        color: #6b7280;
+        margin: 0 0 28px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 14px;
+      }
+      th,
+      td {
+        text-align: left;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 9px 8px;
+        vertical-align: top;
+      }
+      th {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #6b7280;
+      }
+      code {
+        background: #f0f1f4;
+        border-radius: 4px;
+        padding: 1px 5px;
+        font-size: 13px;
+      }
+      footer {
+        margin-top: 32px;
+        color: #6b7280;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Ledger API</h1>
+      <p class="lede">
+        A small expense tracking service. JSON in, JSON out.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Path</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GET</td>
+            <td><code>/health</code></td>
+            <td>Liveness probe</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td><code>/api/expenses</code></td>
+            <td>
+              List expenses. Optional <code>from</code>, <code>to</code>,
+              <code>category</code>, <code>vendor</code>
+            </td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td><code>/api/expenses/summary</code></td>
+            <td>Totals overall and per category for a date range</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td><code>/api/expenses/:id</code></td>
+            <td>Fetch one expense</td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td><code>/api/expenses</code></td>
+            <td>Create an expense</td>
+          </tr>
+          <tr>
+            <td>DELETE</td>
+            <td><code>/api/expenses/:id</code></td>
+            <td>Delete an expense</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <footer>Data is held in memory and resets on restart.</footer>
+    </main>
+  </body>
+</html>
